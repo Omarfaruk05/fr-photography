@@ -1,39 +1,53 @@
-import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Register = () => {
-    const nameRef = useRef('');
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
     const navigate = useNavigate();
-    const handleRegister = event => {
-        const name = nameRef.current.value;
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        console.log(email, password , name)
+    const handleRegister = (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        createUserWithEmailAndPassword(email, password)
     }
 
-    const navigateLogin = event => {
-        navigate('/register')
+    // console.log(user)
+
+    const navigateLogin = () => {
+        navigate('/login')
+    }
+   
+    console.log(error)
+    if(user){
+        navigate('/home')
     }
     return (
         <div>
             <div  style={{maxWidth:"500px"}} className='container mx-auto w-100 mt-5'>
                 <h1 className='text-center mb-4'>Please Register</h1>
                     <Form onSubmit={handleRegister}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control className='py-2 fs-5' ref={nameRef} type="name" placeholder="Your name" required />
+                        <Form.Group className="mb-3" controlId="formBasicText">
+                            <Form.Control className='py-2 fs-5' name="name" type="text" placeholder="Your name" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control className='py-2 fs-5' ref={emailRef} type="email" placeholder="Enter email" required />
+                            <Form.Control className='py-2 fs-5' name="email" type="email" placeholder="Enter email" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control className='py-2 fs-5' ref={passwordRef} type="password" placeholder="Password" required />
+                            <Form.Control className='py-2 fs-5'name="password" type="password" placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check className='fs-5' type="checkbox" label="Check me out" />
+                            <Form.Check className='fs-5' type="checkbox" label="Accept all terms and conditions" />
                         </Form.Group>
                         <Button variant="primary w-100 fs-5 mb-2" type="submit">
                             Register
