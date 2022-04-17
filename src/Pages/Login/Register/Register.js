@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../../firebase.init';
 import { useState } from 'react';
 import { async } from '@firebase/util';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
     const [agree, setAgree] = useState(false)
@@ -16,6 +17,7 @@ const Register = () => {
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
+    let errorElement;
 
     const handleRegister = async(event) => {
         event.preventDefault();
@@ -34,10 +36,17 @@ const Register = () => {
         navigate('/login')
     }
    
-    console.log(emailError)
     if(user){
         navigate('/home')
         console.log(user)
+    }
+
+    if(loading || updating){
+        return <Loading></Loading>  
+      }
+
+    if(emailError){
+        return  errorElement = <p>{emailError?.message}</p>
     }
     return (
         <div>
@@ -57,6 +66,7 @@ const Register = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check onClick={() => setAgree(!agree)} className='fs-5' type="checkbox" label="Accept all terms and conditions" />
                         </Form.Group>
+                        {errorElement}
                         <Button disabled={!agree} variant="primary w-100 fs-5 mb-2" type="submit">
                             Register
                         </Button>

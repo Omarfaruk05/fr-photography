@@ -1,10 +1,12 @@
-import { async } from '@firebase/util';
 import { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -18,11 +20,15 @@ const Login = () => {
         loading,
         signInError,
       ] = useSignInWithEmailAndPassword(auth);
-      const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
       if(user){
         navigate(from, {replace: true});
     }
+
+    if(loading || sending){
+        return <Loading></Loading>  
+      }
 
       if(signInError) {
         errorElement = <p className='text-danger'>Error: {signInError?.message}</p>
@@ -41,8 +47,13 @@ const Login = () => {
 
     const resetPassword = async() => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('sent email')
+        if(email){
+            await sendPasswordResetEmail(email);
+            toast('sent email')
+        }
+        else{
+            toast('Please enter your email address')
+        }
     }
     return (
         <div  style={{maxWidth:"500px"}} className='container mx-auto w-100 mt-5'>
@@ -65,6 +76,7 @@ const Login = () => {
                 <p>New to  <span className='fw-bold text-info'>FR PHOTOGRAPHY</span>? <Link className='text-primary pe-auto text-decoration-none' onClick={navigateRegister} to="/register">Please Register</Link> </p>
                 <p>Forget Password? <Link className='text-primary pe-auto text-decoration-none' onClick={resetPassword} to="/login">Reset Password</Link> </p>
                 <SocialLogin></SocialLogin>
+                <ToastContainer></ToastContainer>
         </div>
     );
 };
