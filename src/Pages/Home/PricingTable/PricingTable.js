@@ -7,7 +7,7 @@ const PricingTable = ({service}) => {
     const navigate = useNavigate();
 
     const navigateToServiceDetali = id =>{
-        navigate(`/service/${id}`)
+        navigate(`/checkout/${id}`)
     }
     return (
         <div className='col-md-6 col-lg-4' >
