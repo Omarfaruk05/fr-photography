@@ -13,9 +13,9 @@ const Header = () => {
     }
     return (
         <>
-            <Navbar style={{backgroundColor:'#91c2ae'}} collapseOnSelect sticky='top' expand="lg" variant='dark'>
+            <Navbar style={{backgroundColor:'#4b886f'}} collapseOnSelect sticky='top' expand="lg" variant='dark'>
                 <Container>
-                <Navbar.Brand className=' fs-3 fw-bold' as={Link} to="/"><span style={{color: '#31795c'}}>FR</span> PHOTOGRAPHY</Navbar.Brand>
+                <Navbar.Brand className=' fs-3 fw-bold' as={Link} to="/"><span style={{color: '#ff6f60'}}>FR</span> PHOTOGRAPHY</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">

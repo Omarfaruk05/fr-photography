@@ -2,7 +2,6 @@ import { Link, useParams } from 'react-router-dom';
 
 const ServiceDetail = () => {
     const {serviceId} = useParams();
-    console.log(serviceId)
     let choice;
     if(serviceId === '1'){
          choice = <h1 className='text-center'>You choose Basic card for hire</h1>;

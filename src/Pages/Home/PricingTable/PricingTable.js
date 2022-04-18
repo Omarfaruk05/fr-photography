@@ -14,7 +14,7 @@ const PricingTable = ({service}) => {
             <Card  className='rounded-2 m-4 shadow'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                <Card.Title className='fs-3 text-center'>{name}</Card.Title>
+                <Card.Title style={{color:'#ff6f60'}} className='fs-3 text-center'>{name}</Card.Title>
                    <div>
                    <ul>
                        <li>{description1}</li>

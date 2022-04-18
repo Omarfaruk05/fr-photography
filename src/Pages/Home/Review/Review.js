@@ -10,10 +10,10 @@ const Review = ({review}) => {
         <div className="col-md-6 col-lg-4">
             <div className='m-4 p-2 shadow  rounded'>
             <div>
-                <img className='img-fluid rounded' src={photo} alt="" />
+                <img className='img-fluid rounded' src={photo} alt="clientPhoto" />
             </div>
             <div>
-                    <h2 className=''>{name}</h2>
+                    <h2 style={{color:'#ff6f60'}}>{name}</h2>
                     <p>{comment}</p>
                     <div className=''>
                         <p>Rating:
