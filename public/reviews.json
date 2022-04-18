@@ -1,0 +1,44 @@
+[
+    {
+       "id":1,
+        "name":"Md. Rasel Hassan",
+        "comment":"This site's person is very expert in photography.",
+        "rating":4,
+        "photo":"https://i.ibb.co/NYLLgCw/rasel.jpg"
+    },
+    {
+        "id":2,
+        "name":"Nymur Khan Tonmoy",
+        "comment":"I hired him for my sister's wedding. Expert photographer.",
+        "rating":3.5,
+        "photo":"https://i.ibb.co/XZ1mxvp/tonmoy.jpg"
+    },
+    {
+        "id":3,
+        "name":"Shariful Islam Rakib",
+        "comment":"I love his photography. He is exceptional.He knows his work.",
+        "rating":5,
+        "photo":"https://i.ibb.co/dDHpt13/shorif.jpg"
+    },
+    {
+        "id":4,
+        "name":"Abul Hasnat Hasib",
+        "comment":"I hired him for my wedding. Very porfetional work. In this price section he is best. ",
+        "rating":5,
+        "photo":"https://i.ibb.co/gwpp0B1/hasib.jpg"
+    },
+    {
+        "id":5,
+        "name":"Hasibul Hassan Emon",
+        "comment":"His legendery work makes me creasy. His work is very profetional.",
+        "rating":4,
+        "photo":"https://i.ibb.co/6HXXp26/emon.jpg"
+    },
+    {
+        "id":6,
+        "name":"Md. Saiful Islam",
+        "comment":"For my friends wedding i hired him. I know him from versity life. He is very passionate.",
+        "rating":4.5,
+        "photo":"https://i.ibb.co/X4fqVhT/saiful.jpg"
+    }
+]

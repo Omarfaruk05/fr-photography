@@ -1,23 +1,38 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
+        "name": "Basic",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "description1": "3 Hours Session",
+        "description2":"Photo Editing",
+        "description3": "50 Digital Images",
+        "description4":"Online Gallery",
+        "description5": "Without Lights, Only Day (outside) Photoshoot.",
+        "description6":"Gear Used: Sony a7 Riii With Two Lences, Stand",
+        "img": "https://i.ibb.co/Chkfs6R/service2.jpg"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "name": "Standard",
+        "price": "450",
+        "description1": "6 Hours Session",
+        "description2":"Photo Editing",
+        "description3": "100 Digital Images",
+        "description4":"Online Gallery",
+        "description5": "With Extra Lights, Day And Night Photoshoot.",
+        "description6":"Gear Used: Sony a7 Riii With Two Lences, Goodox Softbox",
+        "img": " https://i.ibb.co/gmTCkwb/service1.jpg"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
-        "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "name": "Premium",
+        "price": "750",
+        "description1": "12 Hours Session",
+        "description2":"Photo Editing",
+        "description3": "250 Digital Images",
+        "description4":"Online Gallery",
+        "description5": "With Extra Lights, Day And Night Photoshoot.",
+        "description6":"Gear Used: Sony a7 Riii With Two Lences, Goodox Softbox, Dji Inspir 2.",
+        "img": " https://i.ibb.co/56HkBjm/service3.jpg"
     }
 ]
