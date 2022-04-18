@@ -51,7 +51,7 @@ const Register = () => {
     return (
         <div>
             <div  style={{maxWidth:"500px"}} className='container mx-auto w-100 mt-5'>
-                <h1 className='text-center mb-4'>Please Register</h1>
+                <h1 style={{color:'#4b886f'}} className='text-center mb-4'>Please Register</h1>
                     <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3" controlId="formBasicText">
                             <Form.Control className='py-2 fs-5' name="name" type="text" placeholder="Your name" required />
@@ -67,11 +67,11 @@ const Register = () => {
                             <Form.Check onClick={() => setAgree(!agree)} className='fs-5' type="checkbox" label="Accept all terms and conditions" />
                         </Form.Group>
                         {errorElement}
-                        <Button disabled={!agree} variant="primary w-100 fs-5 mb-2" type="submit">
+                        <Button style={{backgroundColor:'#4b886f', border:'none'}} disabled={!agree} variant="primary w-100 fs-5 mb-2" type="submit">
                             Register
                         </Button>
                     </Form>
-                        <p>Already have an account? <Link className='text-primary pe-auto text-decoration-none' onClick={navigateLogin} to="/login">Please Login</Link> </p>
+                        <p style={{marginBottom:'270px'}}>Already have an account? <Link className='text-primary pe-auto text-decoration-none' onClick={navigateLogin} to="/login">Please Login</Link> </p>
             </div>
         </div>
     );

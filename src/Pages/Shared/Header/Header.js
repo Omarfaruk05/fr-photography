@@ -13,22 +13,22 @@ const Header = () => {
     }
     return (
         <>
-            <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark">
+            <Navbar style={{backgroundColor:'#91c2ae'}} collapseOnSelect sticky='top' expand="lg" variant='dark'>
                 <Container>
-                <Navbar.Brand as={Link} to="/">FR PHOTOGRAPHY</Navbar.Brand>
+                <Navbar.Brand className=' fs-3 fw-bold' as={Link} to="/"><span style={{color: '#31795c'}}>FR</span> PHOTOGRAPHY</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                    <Nav.Link href="home#services">Services</Nav.Link>
-                    <Nav.Link href="home#blogs">Blogs</Nav.Link>
+                    <Nav.Link className=' fs-5' href="home#services">Services</Nav.Link>
+                    <Nav.Link className=' fs-5' href="home#blogs">Blogs</Nav.Link>
                     </Nav>
                     <Nav>
-                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    <Nav.Link className=' fs-5' as={Link} to="/about">About</Nav.Link>
                     {
                         user ?
-                        <Nav.Link onClick={handleSignOut} as={Link} to="/login">Sign Out</Nav.Link>
+                        <Nav.Link className=' fs-5' onClick={handleSignOut} as={Link} to="/login">Sign Out</Nav.Link>
                         :   
-                        <Nav.Link as={Link} to="/login">
+                        <Nav.Link className=' fs-5' as={Link} to="/login">
                         Login
                     </Nav.Link>}
                     </Nav>

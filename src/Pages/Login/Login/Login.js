@@ -57,7 +57,7 @@ const Login = () => {
     }
     return (
         <div  style={{maxWidth:"500px"}} className='container mx-auto w-100 mt-5'>
-            <h1 className='text-center mb-4'>Please login</h1>
+            <h1 style={{color:'#4b886f'}} className='text-center mb-4'>Please Login</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control className='py-2 fs-5'name='email' ref={emailRef} type="email" placeholder="Enter email" required />
@@ -69,11 +69,11 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 </Form.Group>
                 {errorElement}
-                <Button variant="primary w-100 mx-auto fs-5 mb-2 " type="submit">
-                    Sign in
+                <Button style={{backgroundColor:'#4b886f', border:'none'}} variant="primary w-100 mx-auto fs-5 mb-2 " type="submit">
+                    Login
                 </Button>
                 </Form>
-                <p>New to  <span className='fw-bold text-info'>FR PHOTOGRAPHY</span>? <Link className='text-primary pe-auto text-decoration-none' onClick={navigateRegister} to="/register">Please Register</Link> </p>
+                <p>New to  <span style={{fontSize:'20px', fontWeight:'600', color:'#4b886f'}}><span style={{color:'#ff6f60'}}>FR</span> PHOTOGRAPHY</span> ? <Link className='text-primary pe-auto text-decoration-none' onClick={navigateRegister} to="/register">Please Register</Link> </p>
                 <p>Forget Password? <Link className='text-primary pe-auto text-decoration-none' onClick={resetPassword} to="/login">Reset Password</Link> </p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer></ToastContainer>

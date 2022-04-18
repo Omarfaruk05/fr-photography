@@ -12,7 +12,7 @@ const PricingTables = () => {
     }, [])
     return (
         <div id='services' className='container  mx-auto'>
-            <h1 className='text-center my-5'>PRICING TABLE</h1>
+            <h1  style={{color: '#31795c', fontWeight: '700'}}  className='text-center my-5'>PRICING TABLE</h1>
             <CardGroup className="">
                 {
                     services.map(service => <PricingTable key={service.id} service={service}></PricingTable>)
